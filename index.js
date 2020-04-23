@@ -1,12 +1,7 @@
 'use strict'
-const imgEl = document.querySelector('#game-img')
-const wordEl = document.querySelector('#game-word')
 
 const wordUrl = 'https://random-word-api.herokuapp.com/word?number=1'
-const imageUrl = `http://api.giphy.com/v1/gifs/search?api_key=8goq10d21Zi31ssEtoViPyFv9bwrkXES&q=game`
-
-
-
+let imageUrl = 'http://api.giphy.com/v1/gifs/search?api_key=8goq10d21Zi31ssEtoViPyFv9bwrkXES&q='
 
 const getData = async () => {
 
@@ -15,10 +10,8 @@ const getData = async () => {
 
 
 
-  const responseImg = await fetch(imageUrl)
+  const responseImg = await fetch(imageUrl + word[0])
   const image = await responseImg.json()
-
-
 
   const data = Promise.all([image['data'][0].images.downsized_large.url, word[0]])
 
@@ -30,9 +23,9 @@ const render = async () => {
 
   document.querySelector('#game-img').setAttribute('src', data[0])
   document.querySelector('#game-word').innerHTML = data[1]
-
-
 }
+
+
 
 render()
 
