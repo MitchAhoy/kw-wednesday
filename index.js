@@ -1,19 +1,18 @@
 'use strict'
 
-const wordUrl = 'https://random-word-api.herokuapp.com/word?number=1'
+const wordUrl = 'http://puzzle.mead.io/puzzle?wordCount=1'
 let imageUrl = 'http://api.giphy.com/v1/gifs/search?api_key=8goq10d21Zi31ssEtoViPyFv9bwrkXES&q='
 
 const getData = async () => {
 
   const responseWord = await fetch(wordUrl)
   const word = await responseWord.json()
+  console.log(word.puzzle)
 
-
-
-  const responseImg = await fetch(imageUrl + word[0])
+  const responseImg = await fetch(imageUrl + word.puzzle)
   const image = await responseImg.json()
 
-  const data = Promise.all([image['data'][0].images.downsized_large.url, word[0]])
+  const data = Promise.all([image['data'][0].images.downsized_large.url, word.puzzle])
 
   return data
 }
@@ -25,7 +24,7 @@ const render = async () => {
   document.querySelector('#game-word').innerHTML = data[1]
 }
 
-
-
 render()
+
+document.querySelector('#reset').addEventListener('click', render)
 
