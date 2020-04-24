@@ -8,6 +8,7 @@ body {
   background: #12181b;
   font-family: 'Work Sans', sans-serif;
   font-size: 2rem;
+  color: #b2becd;
 }
 
 .container {
@@ -18,21 +19,29 @@ body {
   flex-direction: column;
 }
 
-#title {
-  color: #b2becd;
-  margin-bottom: 1rem;
+h1 {
+
+  margin: 1rem 0;
   text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #b2becd;
+  border-bottom: 2px solid #fa8142;
+  margin-top: 1rem;
 }
 
 #game-img {
   margin-bottom: 1rem;
   border-radius: 5px;
+  max-width: 80%;
 }
 
 #game-word {
   color: #fff;
   margin-bottom: 3rem;
-  border: 2px dashed #b2becd;
+  border: 2px dashed #fff;
   padding: 0.5rem 1rem;
 }
 
@@ -67,4 +76,14 @@ body {
     font-size: 1rem;
   }
   
+}
+
+/* Modal */
+#modal {
+  text-align: center;
+}
+
+.score-arrow {
+  max-width: 30px;
+
 }

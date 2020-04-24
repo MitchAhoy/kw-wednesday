@@ -7,7 +7,6 @@ const getData = async () => {
 
   const responseWord = await fetch(wordUrl)
   const word = await responseWord.json()
-  console.log(word.puzzle)
 
   const responseImg = await fetch(imageUrl + word.puzzle)
   const image = await responseImg.json()
