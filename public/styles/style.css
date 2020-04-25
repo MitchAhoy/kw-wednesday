@@ -25,12 +25,7 @@ h1 {
   text-align: center;
 }
 
-a {
-  text-decoration: none;
-  color: #b2becd;
-  border-bottom: 2px solid #fa8142;
-  margin-top: 1rem;
-}
+
 
 #game-img {
   margin-bottom: 1rem;
@@ -76,14 +71,63 @@ a {
     font-size: 1rem;
   }
   
+  #modal {
+    top:0% !important;
+  }
 }
 
 /* Modal */
-#modal {
-  text-align: center;
+
+#show-scores {
+  text-decoration: none;
+  color: #b2becd;
+  border-bottom: 2px solid #fa8142;
+  margin-top: 1rem;
+  cursor: pointer;
 }
+
+.hide-scores {
+  opacity: 0%;
+  
+  display: none;
+  z-index: -1;
+}
+
+#modal {
+  transition: ease-in-out 2s opacity;
+  opacity: 100%;
+  text-align: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 50%;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  margin: auto;
+  background: rgba(0,0,0,1);
+
+}
+
+
 
 .score-arrow {
   max-width: 30px;
 
+}
+
+.add-score, .minus-score {
+  cursor: pointer;
+}
+
+.player {
+  margin: 1rem 0;
+  padding: 0.2rem 0rem;
+}
+
+.close-btn {
+  float: right;
+  padding: 1rem;
+  color: #ff90a6;
+  cursor: pointer;
 }

@@ -1,7 +1,7 @@
 'use strict'
 
 const wordUrl = 'http://puzzle.mead.io/puzzle?wordCount=1'
-let imageUrl = 'http://api.giphy.com/v1/gifs/search?api_key=8goq10d21Zi31ssEtoViPyFv9bwrkXES&q='
+const imageUrl = 'http://api.giphy.com/v1/gifs/search?api_key=8goq10d21Zi31ssEtoViPyFv9bwrkXES&q='
 
 const getData = async () => {
 
