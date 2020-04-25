@@ -106,10 +106,7 @@ h1 {
   overflow: auto;
   margin: auto;
   background: rgba(0,0,0,1);
-
 }
-
-
 
 .score-arrow {
   max-width: 30px;
@@ -125,9 +122,14 @@ h1 {
   padding: 0.2rem 0rem;
 }
 
+.player:hover {
+  background: #12181b;
+}
+
 .close-btn {
   float: right;
   padding: 1rem;
   color: #ff90a6;
   cursor: pointer;
 }
+
