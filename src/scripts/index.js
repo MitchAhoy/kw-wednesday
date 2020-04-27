@@ -1,13 +1,12 @@
 'use strict'
 
 const wordUrl = 'http://puzzle.mead.io/puzzle?wordCount=1'
-let imageUrl = 'http://api.giphy.com/v1/gifs/search?api_key=8goq10d21Zi31ssEtoViPyFv9bwrkXES&q='
+const imageUrl = 'http://api.giphy.com/v1/gifs/search?api_key=8goq10d21Zi31ssEtoViPyFv9bwrkXES&q='
 
 const getData = async () => {
 
   const responseWord = await fetch(wordUrl)
   const word = await responseWord.json()
-  console.log(word.puzzle)
 
   const responseImg = await fetch(imageUrl + word.puzzle)
   const image = await responseImg.json()
