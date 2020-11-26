@@ -10,20 +10,18 @@ export const UserContextProvider = ({ children }) => {
     useEffect(() => {
         const fetchUser = async () => {
             try {
-                const res = await axios.get('/api/current_user')
-                const data = res.data
-                if (data) setUser(data)
-                return
+                const req = await axios.get('/api/current_user')
+                if (req.data) setUser(req.data)
             } catch (err) {
-                throw new Error(err)
+                console.error(err)
             }
         }
         fetchUser()
     }, [])
 
     return (
-        <UserContext.Provider value={}>
-            {...children}
+        <UserContext.Provider value={{user}}>
+            {children}
         </UserContext.Provider>
     )
 } 
